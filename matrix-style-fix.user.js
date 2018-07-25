@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         make_matrix_great_again
 // @namespace    CodersUnderground
-// @version      0.0.2
+// @version      0.0.3
 // @description  fix matrix styles in browser to make it actually useable
 // @author       Shawak
 // @match        *://matrix.heldscal.la/*
@@ -77,6 +77,11 @@ var css = `
 /* emoji size in chat */
 .mx_emojione {
   font-size: 36px;
+}
+
+/* make message time visible */
+.mx_MessageTimestamp {
+  visibility: visible !important;
 }
 
 `;

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         make_matrix_great_again
 // @namespace    CodersUnderground
-// @version      0.0.1
+// @version      0.0.2
 // @description  fix matrix styles in browser to make it actually useable
 // @author       Shawak
 // @match        *://matrix.heldscal.la/*
@@ -28,7 +28,7 @@ var css = `
 
 /* smaller xyz is typing box */
 .mx_RoomView_statusAreaBox {
-  min-height: 30px;
+  min-height: 32px; /* height of typingBar+2px for line above */
 }
 .mx_RoomStatusBar_typingBar {
   line-height: 30px;

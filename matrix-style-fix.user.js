@@ -29,7 +29,6 @@ var css = `
 /* smaller xyz is typing box */
 .mx_RoomView_statusAreaBox {
   min-height: 30px;
-  height: 30px;
 }
 .mx_RoomStatusBar_typingBar {
   line-height: 30px;
@@ -94,5 +93,5 @@ GM_addStyle(css);
       clearInterval(checkExist);
     }
   }, 50);
-  
+
 })();

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         make_matrix_great_again
 // @namespace    CodersUnderground
-// @version      0.0.4
+// @version      0.0.5
 // @description  fix matrix styles in browser to make it actually useable
 // @author       Shawak
 // @match        *://matrix.heldscal.la/*
@@ -12,13 +12,52 @@
 
 var css = `
 
+/* background color */
+.mx_MatrixChat_middlePanel,
+.mx_LeftPanel,
+.mx_RightPanel,
+.mx_RightPanel_headerButtonGroup,
+.mx_RoomSubList_label,
+.mx_RoomDropTarget_container,
+.mx_RoomTile,
+.mx_TagPanel,
+.mx_RoomHeader_rightRow,
+.mx_RoomList,
+.matrixchat,
+.mx_MImageBody,
+.mx_EventTile_line,
+.mx_RoomView_statusAreaBox {
+  background-color: #1d1f21 !important;
+}
+
 /* max width sized chat */
 .mx_RoomView_messageListWrapper,
 .mx_MessageComposer_wrapper,
 .mx_RoomView_statusAreaBox,
 .mx_RoomHeader_wrapper,
-.mx_RoomView_auxPanel {
+.mx_RoomView_auxPanel,
+.mx_TopUnreadMessagesBar {
   max-width: 100%;
+}
+
+/* rust highlighting */
+.language-rust span {
+  filter: invert(100%);
+}
+.language-rust .hljs-title {
+  color: #b3deef;
+}
+.language-rust .hljs-keyword {
+  color: #73cef4;
+}
+.language-rust .hjls-string {
+  color: #d3b987;
+}
+.language-rust .hjls-comment {
+  color: #666666;
+}
+.language-rust .hljs-number {
+  color: #ffc24b;
 }
 
 /* move user icons away from scrollbar */
@@ -79,6 +118,10 @@ var css = `
   font-size: 36px;
 }
 
+/* make placeholder color darker */
+.public-DraftEditorPlaceholder-root {
+  color: rgb(80, 80, 80);
+}
 `;
 
 GM_addStyle(css);
